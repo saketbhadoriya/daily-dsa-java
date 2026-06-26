@@ -1,0 +1,29 @@
+class Solution {
+	public int Count(int[][] matrix) {
+		int count = 0;
+		int dx[] = {-1, -1, -1, 0, +1, +1, 0,1};
+		int dy[] = {-1, 0, +1, +1, 0, -1, -1,1};
+		
+		for (int i = 0; i<matrix.length; i++) {
+			for (int j = 0; j<matrix[0].length; j++) {
+				if(matrix[i][j] == 1) {
+					int fcount = 0;
+					for (int k = 0; k<8; k++) {
+						int ni = i + dx[k];
+						int nj = j + dy[k];
+						if(ni >= 0 && ni <= matrix.length - 1 && nj >= 0 && nj <= matrix[0].length - 1 && matrix[ni][nj] == 0) {
+							fcount++;
+						}
+						
+					}
+					if(fcount%2 == 0 && fcount != 0) {
+						count++;
+					}
+				}
+				
+			}
+		}
+		return count;
+		
+	}
+}
