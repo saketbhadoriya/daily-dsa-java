@@ -1,0 +1,22 @@
+// class Solution {
+//     public String toLowerCase(String s) {
+//     //    String res = "";
+//     //     for(int i = 0; i<s.length();i++){
+            
+//     //         if(65 <= s.charAt(i) && s.charAt(i)<= 90 ){
+//     //             res += (char)(s.charAt(i)+32); 
+//     //         }else{
+//     //             res = res + s.charAt(i);
+//     //         }
+//     //     }
+//     //     return res;
+    
+//     }
+// }
+
+class Solution {
+    public String toLowerCase(String s) {
+        String ans=s.toLowerCase();
+        return ans;
+    }
+}
