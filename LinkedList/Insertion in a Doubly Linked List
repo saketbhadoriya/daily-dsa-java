@@ -1,0 +1,22 @@
+class Solution {
+    Node insertAtPos(Node head, int p, int x) {
+        Node newNode = new Node(x);
+
+        if (p == 0 && head == null) {
+            return newNode;
+        }
+        Node temp = head;
+        for (int i = 0; i < p && temp != null; i++) {
+            temp = temp.next;
+        }
+        newNode.next = temp.next;
+        newNode.prev = temp;
+        if (temp.next != null) {
+            temp.next.prev = newNode;
+        }
+
+        temp.next = newNode;
+
+        return head;
+    }
+}
