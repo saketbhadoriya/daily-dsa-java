@@ -1,0 +1,23 @@
+class Solution {
+    Node divide(Node head) {
+        // code here
+        Node tl = new Node(-1);
+        Node tg = new Node(-1);
+        Node temp = head;
+        Node dl = tl;
+        Node dg = tg;
+        while(temp != null){
+            if(temp.data%2 == 0){
+                tl.next = temp;
+                tl = tl.next;
+            }else{
+                tg.next = temp;
+                tg = tg.next;
+            }
+            temp = temp.next;
+        }
+      tl.next = dg.next;
+      tg.next = null;
+      return dl.next;
+    }
+}
